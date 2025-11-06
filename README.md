@@ -1,119 +1,127 @@
-﻿📰 News Classification using Machine Learning
- Overview
-This project aims to automatically classify news articles into different categories such as politics, sports, business, technology, and entertainment using machine learning and natural language processing (NLP) techniques. It provides an end-to-end solution—from text preprocessing and model training to evaluation and user interface integration—allowing users to predict the category of any news headline or article text.
+# 📰 Machine Learning-Based News Article Categorization System
 
-Objective
-The main goal of this project is to build an intelligent news classification system capable of accurately identifying the category of a news article based on its textual content.
-This automation can help media organizations, news aggregators, and readers quickly organize and filter information efficiently.
+## Project Summary
 
-Key Features
-•  Automated Classification: Classifies news articles into predefined categories.
-•  NLP-Based Preprocessing: Includes tokenization, stemming, stop-word removal, and TF-IDF vectorization.
-•  Model Comparison: Evaluates multiple machine learning models (Naïve Bayes, Logistic Regression, SVM).
-•  High Accuracy: Optimized using hyperparameter tuning for improved performance.
-•  User Interface: Simple and interactive web interface (Streamlit or Flask).
-•  Visualization: Displays confusion matrix, accuracy scores, and classification reports.
+This system employs machine learning algorithms combined with natural language processing to automatically sort news content into distinct categories including politics, sports, business, technology, and entertainment. The implementation covers the complete pipeline from data preparation through model deployment, enabling real-time prediction of article categories based on textual input.
 
-System Architecture
-Input → Preprocessing → Feature Extraction → Model Prediction → Output
-1. Data Collection:
-o Dataset sourced from Kaggle or open-source news datasets containing text and category labels.
-2. Data Preprocessing:
-o Cleaning, tokenization, lowercasing, stop-word removal, and stemming.
-o Transformation of text data into numerical form using TF-IDF Vectorizer.
-3. Model Training:
-o Trained and compared multiple algorithms such as:
-• Naïve Bayes
-• Logistic Regression
-• Support Vector Machine (SVM)
-4. Model Evaluation:
-o Evaluated using accuracy, precision, recall, F1-score, and confusion matrix.
-5. Deployment:
-o Implemented using Streamlit for a user-friendly prediction interface.
+## Project Goals
 
- Technologies Used
-Category
-Tools / Libraries
-Programming Language
-Python
-ML Libraries
-Scikit-learn, Pandas, NumPy
-NLP Tools
-NLTK, TF-IDF Vectorizer
-Visualization
-Matplotlib, Seaborn
-Frontend (UI)
-Streamlit
-Dataset Source
-Kaggle / News Dataset CSV
+The primary objective is developing a robust classification framework that can accurately determine news article categories by analyzing their content. Such automation benefits news platforms, content aggregators, and end-users by streamlining information organization and retrieval processes.
 
- How It Works
-1. The user inputs a news headline or article into the interface.
-2. The system processes the text through NLP-based preprocessing.
-3. The pre-trained machine learning model predicts the most probable category.
-4. The result is displayed instantly with confidence probability.
+## Core Capabilities
 
- Model Performance Summary
-Model
-Accuracy
-Precision
-Recall
-F1-Score
-Naïve Bayes
-89.4%
-0.88
-0.89
-0.88
-Logistic Regression
-91.7%
-0.92
-0.91
-0.91
-SVM
-93.2%
-0.93
-0.93
-0.93
-Final Model Used: Support Vector Machine (SVM) due to its superior accuracy and stability across all categories.
+- **Automatic Categorization**: Assigns news content to appropriate predefined categories
+- **Text Processing Pipeline**: Implements tokenization, stemming, stop-word filtering, and TF-IDF transformation
+- **Algorithm Benchmarking**: Tests and compares performance across Naïve Bayes, Logistic Regression, and SVM classifiers
+- **Performance Optimization**: Utilizes hyperparameter tuning to maximize prediction accuracy
+- **Interactive Interface**: Features web-based interface built with Streamlit or Flask
+- **Performance Analytics**: Generates confusion matrices, accuracy metrics, and detailed classification reports
 
- Future Enhancements
-• Integration with deep learning models (LSTM / BERT) for better contextual understanding.
-• Real-time classification of live news feeds via APIs.
-• Multi-language support for regional and international news articles.
-• Improved visualization dashboard with trend analysis.
+## System Design Flow
 
- Project Structure
+**Data Input → Text Processing → Feature Engineering → Classification → Result Output**
+
+### Implementation Pipeline
+
+**Data Acquisition**
+- Source: Kaggle open datasets and news article collections with labeled categories
+
+**Text Preparation**
+- Operations: Text cleaning, case normalization, tokenization, stop-word elimination, and stemming
+- Vectorization: TF-IDF transformation converts text into numerical feature vectors
+
+**Algorithm Training**
+- Tested classifiers:
+  - Naïve Bayes probabilistic classifier
+  - Logistic Regression linear model
+  - Support Vector Machine kernel-based classifier
+
+**Performance Assessment**
+- Metrics: Accuracy rate, precision score, recall rate, F1-score, confusion matrix analysis
+
+**System Deployment**
+- Platform: Streamlit framework providing intuitive prediction interface
+
+## Technology Stack
+
+| Component | Technologies |
+|-----------|-------------|
+| Language | Python 3.x |
+| ML Framework | Scikit-learn, Pandas, NumPy |
+| NLP Processing | NLTK, TF-IDF Vectorizer |
+| Data Visualization | Matplotlib, Seaborn |
+| User Interface | Streamlit |
+| Data Source | Kaggle datasets (CSV format) |
+
+## Workflow Description
+
+1. User submits news headline or full article text through the interface
+2. System applies NLP preprocessing transformations to the input
+3. Trained classifier analyzes processed features and generates prediction
+4. System displays predicted category with associated confidence score
+
+## Classifier Performance Comparison
+
+| Algorithm | Accuracy | Precision | Recall | F1-Score |
+|-----------|----------|-----------|--------|----------|
+| Naïve Bayes | 89.4% | 0.88 | 0.89 | 0.88 |
+| Logistic Regression | 91.7% | 0.92 | 0.91 | 0.91 |
+| SVM | 93.2% | 0.93 | 0.93 | 0.93 |
+
+**Selected Model**: Support Vector Machine (SVM) chosen for deployment based on superior accuracy and consistent performance across all news categories.
+
+## Potential Improvements
+
+- Incorporate deep learning architectures (LSTM/BERT) for enhanced semantic understanding
+- Implement API integration for live news feed classification
+- Extend system to support multiple languages for global news coverage
+- Develop advanced analytics dashboard with temporal trend visualization
+
+## Directory Organization
+
+```
 News_Classification/
 │
 ├── dataset/
-│   ├── news.csv
+│   └── news.csv
 │
 ├── models/
 │   ├── svm_model.pkl
-│   ├── tfidf_vectorizer.pkl
+│   └── tfidf_vectorizer.pkl
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
 └── templates/
     └── interface.html
+```
 
- Usage Instructions
-1. Install required libraries:
-2. pip install -r requirements.txt
-3. Run the project:
-4. streamlit run app.py
-5. Upload or paste a news article in the text field.
-6. The system will display the predicted category and confidence score.
+## Setup and Execution
 
- Authors
-Developed by: Rishi K.
-Guided by: [Instructor / Faculty Name if applicable]
-Institution: [Your College / Organization Name]
+**Installation**
+```bash
+pip install -r requirements.txt
+```
 
- References
-• Kaggle News Classification Dataset
-• Scikit-learn Documentation
-• NLTK Text Processing Guide
-• Streamlit Official Documentation
+**Launch Application**
+```bash
+streamlit run app.py
+```
 
+**Using the System**
+1. Enter or paste news article text into the input field
+2. System processes and analyzes the content
+3. Predicted category appears with confidence percentage
+
+## Project Credits
+
+**Developer**: Rishi K.  
+**Academic Supervisor**: [Faculty Name]  
+**Institution**: [University/Organization Name]
+
+## Resource References
+
+- Kaggle News Dataset Repository
+- Scikit-learn ML Library Documentation
+- NLTK Natural Language Toolkit Guide
+- Streamlit Framework Documentation
